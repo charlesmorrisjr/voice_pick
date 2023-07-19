@@ -8,7 +8,8 @@ const speechConfig = sdk.SpeechConfig.fromSubscription(process.env.SPEECH_KEY, p
 speechConfig.speechRecognitionLanguage = "en-US";
 
 function fromFile() {
-    let audioConfig = sdk.AudioConfig.fromWavFileInput(fs.readFileSync("untitled.wav"));
+    // let audioConfig = sdk.AudioConfig.fromWavFileInput(fs.readFileSync("untitled.wav"));
+    let audioConfig = sdk.AudioConfig.fromWavFileInput(fs.readFileSync("whatstheweatherlike.wav"));
     let speechRecognizer = new sdk.SpeechRecognizer(speechConfig, audioConfig);
 
     speechRecognizer.recognizeOnceAsync(result => {
